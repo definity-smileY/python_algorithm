@@ -12,3 +12,4 @@ def print_to_n(n):
 
 if __name__ == "__main__":
     print_to_n(100)
+    
