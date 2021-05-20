@@ -3,14 +3,12 @@
 """
 
 def print_to_n(n):
-    num = 1
-    while n >= num:
-        
-        num = num + 1
-    print(num)
-        
+    num = 0
+    while (n > num):
+        num += 1
+        print(num)
     
 if __name__=='__main__':
-    print_to_n(19)
+    print_to_n(20)
 
     
