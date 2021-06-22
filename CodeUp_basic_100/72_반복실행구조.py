@@ -39,7 +39,7 @@ n -= 1 과 같이 짧게 작성할 수도 있다. n -= 1 은 n = n-1 과 같은 
 1
 """
 a = int(input())
-while True:
+while True: 
     if a > 0:
         print(a)
         a = a - 1
