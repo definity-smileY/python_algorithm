@@ -41,4 +41,3 @@ i 는 반복자(iterator)를 나타내는 i라고 생각할 수 있다. i, j, k 
 a = int(input())
 for i in range(0, a+1):
     print(i)
-asdasdad
