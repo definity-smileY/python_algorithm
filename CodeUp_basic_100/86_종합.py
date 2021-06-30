@@ -41,13 +41,9 @@ print(s)
 a = int(input())
 
 b = 0
-while True:
-    a += b
-    b += 1
-    if b>=a:
-        break
+i = 1
 
-print(a)
-
-
+while b < a:
+    b += i
+    i += 1
 print(b)
