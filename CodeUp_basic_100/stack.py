@@ -42,15 +42,15 @@
 # for a, b in result:
 #     print(a, b)
 
-import sys
+# import sys
 
-a, b = map(int, sys.stdin.readline().split())
+# a, b = map(int, sys.stdin.readline().split())
 
-def main(a, b):
-    for i in range(a+1):
-        print(i)
+# def main(a, b):
+#     for i in range(a+1):
+#         print(i)
 
-main(a, b)
+# main(a, b)
 
 
 # def solution(v):
@@ -81,3 +81,26 @@ main(a, b)
 #     print(answer)
 #     return answer
 # solution([[1, 4], [3, 4], [3, 10]])
+
+"""
+A = 배수 집합
+B = 배수 집합
+S = A, B 오름차순으로 정렬
+answer = S의 K 번째 값
+"""
+# def solution(A, B, K):
+#     S = []
+#     loof = 0
+    
+#     while True:        
+#         if loof % A == 0 or loof % B == 0:
+#             S.append(loof)                             
+        
+#         loof +=1        
+#         if loof == 1000:
+#             break
+#     print(type(S[K]))
+        
+# solution(6, 8, 8)
+# # 입력값 〉	1003, 1834, 199230
+# # 기댓값 〉	129225517
