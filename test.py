@@ -1,21 +1,29 @@
-a = int(input()) # 방학 일수
-b = int(input()) # 국어 페이지
-c = int(input()) # 수학 페이지
-d = int(input()) # 하루에 국어 최대 페이지
-e = int(input()) # 하루에 수학 최대 페이지
+import sys
 
-if 2 <= a <= 40 and 1 <= b and c <= 1000 and 1 <= d and e <= 100:
-    if b % d == 0:
-        data_1 = b // d
-    else:
-        data_1 = b // d + 1    
-    if c % e == 0:
-        data_2 = c // e
-    else:
-        data_2 = c // e + 1
-    
-    max_date = max(data_1, data_2)
-    print(a - max_date)
-else:
-    pass
+num = int(input())
 
+# 1. 친구 목록 그래프, 친구가 아닌 사람들에 대한 그래프, 2-친구에 대한 그래프
+friend = [[] for i in range(num)] 
+no_friend = [[] for i in range(num)]
+friend_second =[[] for i in range(num)]
+
+# 2. 입력 데이터를 받아 친구 목록 그래프와 친구가 아닌 사람들에 대한 그래프 분배
+for i in range(num):
+    for idx, v in enumerate(input()): # 돌때마다 해당 인덱스에 idx 추가하기
+        if v == 'Y':
+            friend[i].append(idx)        
+        elif v == 'N' and i != idx: 
+            no_friend[i].append(idx)
+
+# 3. 친구가 아닌 사람들에 대한 그래프 중 2-친구 관계에 있는지 확인
+for idx, v in enumerate(no_friend):
+    for name in v:
+        # 4. 2-친구 조건에 합당하면 2-친구에 대한 그래프에 추가
+        if len(set(friend[name]) - set(friend[idx])) != len(friend[name]):
+            friend_second[idx].append(name)
+
+m = 0
+for i in range(num):
+    if m < len(friend[i] + friend_second[i]):
+        m = len(friend[i] + friend_second[i])
+print(m)
