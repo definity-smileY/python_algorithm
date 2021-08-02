@@ -1,47 +1,21 @@
-# 부모 클래스
-class Item:
-    # 생성자
-    def __init__(self, name, price, weight, isdropable):
-        self.name = name
-        self.price = price
-        self.weight = weight
-        self.isdropable = isdropable
-    # 파는 메서드
-    def sale(self):
-        print(f"{self.name}의 가격은{self.price}원 입니다.")
+a = int(input()) # 방학 일수
+b = int(input()) # 국어 페이지
+c = int(input()) # 수학 페이지
+d = int(input()) # 하루에 국어 최대 페이지
+e = int(input()) # 하루에 수학 최대 페이지
+
+if 2 <= a <= 40 and 1 <= b and c <= 1000 and 1 <= d and e <= 100:
+    if b % d == 0:
+        data_1 = b // d
+    else:
+        data_1 = b // d + 1    
+    if c % e == 0:
+        data_2 = c // e
+    else:
+        data_2 = c // e + 1
     
-    # 버리는 메서드
-    def discard(self):
-        if self.isdropable:
-            print(f"{self.name}을 버렸습니다.")
-        else:
-            print(f"{self.name}은 버리지 못합니다.")
+    max_date = max(data_1, data_2)
+    print(a - max_date)
+else:
+    pass
 
-# 장비 아이템(자식클래스)
-class Wearableitem(Item):
-    def __init__(self, name, price, weight, isdropable, effect):
-        super().__init__(name, price, weight, isdropable)
-        self.effect = effect
-    
-    def wear(self):
-        print(f'{self.name}을 착용했습니다. {self.effect}')
-
-
-# 소모품 아이템(자식 클래스)
-class Usableitem(Item):
-    def __init__(self, name, price, weight, isdropable, effect):
-        super().__init__(name, price, weight, isdropable)
-        self.effect = effect
-
-    def use(self):
-        print(f'{self.name} 사용 {self.effect}')
-
-weapen = Wearableitem("웨펀무기", 10000, 1.5, True, "착")
-weapen.wear()
-weapen.sale()
-weapen.discard()
-
-hp_postion = Usableitem("HP포션", 1000, 0.1, True, "쓰읍")
-hp_postion.use()
-hp_postion.sale()
-hp_postion.discard()
