@@ -38,3 +38,7 @@ if A == B:
     print(count)
 else:
     print(-1)
+
+
+
+    
