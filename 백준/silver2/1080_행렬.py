@@ -18,8 +18,6 @@ n, m = map(int, sys.stdin.readline().split())
 
 A = [list(map(int, sys.stdin.readline().strip())) for _ in range(n)] # 변환 전 2차원 배열
 B = [list(map(int, sys.stdin.readline().strip())) for _ in range(n)] # 변환 후 2차원 배열
-# print("행렬 A:", A)
-# print("행렬 B:", B)
 count = 0
 
 # 3 * 3을 뒤집는 함수 (행렬을 변환하는 연산은 어떤 3*3크기의 부분 행렬에 있는 모든 원소를 뒤집는 것이다. (0 -> 1, 1 -> 0))
@@ -38,7 +36,3 @@ if A == B:
     print(count)
 else:
     print(-1)
-
-
-
-    
