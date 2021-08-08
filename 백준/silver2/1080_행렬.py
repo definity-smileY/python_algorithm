@@ -25,7 +25,6 @@ def reverse(i, j):
     for x in range(i, i+3):
         for y in range(j, j+3):
             A[x][y] = 1 - A[x][y]
-
 for i in range(n-2):
     for j in range(m-2):
         if A[i][j] != B[i][j]: # 일치하지 않은 부분 발생하면
