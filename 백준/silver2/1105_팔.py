@@ -42,3 +42,4 @@ print([temp[0] + 1, temp[1] + 1])
 
 
 # 몸이 녹는다 ㅠㅠ
+# 내일 : python으로만 crud적용, vue.js하기
