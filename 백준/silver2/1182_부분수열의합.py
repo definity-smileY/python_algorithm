@@ -6,13 +6,9 @@ n_list = list(map(int, input().split()))
 
 count = 0
 for i in range(n):
-    sub = list(combinations(n_list, i))
-    print("sub == ", sub)
+    sub = list(combinations(n_list, i))    
     for j in sub:
-        # print(j)
-        print("j == ", j)
         if sum(j) == s:
-            print("sum(j) == 0", sum(j))
             count += 1
 
 print(count)
