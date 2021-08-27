@@ -7,5 +7,6 @@ for i in range(1, a+1):
     a_list.append(Average)
 
 while True:
-    
+    count % 
+
     
