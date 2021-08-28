@@ -6,7 +6,3 @@ for i in range(1, a+1):
     Average = float(input())
     a_list.append(Average)
 
-while True:
-    count % 
-
-    
