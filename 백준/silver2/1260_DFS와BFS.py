@@ -1,5 +1,5 @@
 import sys
-import collections
+from collections import deque
 
 input = sys.stdin.readline
 
@@ -12,6 +12,17 @@ def dfs(graph, v):
         if n not in visited:
             visited.setdefault(n)            
             stack += reversed(graph[n])
+    return visited
+
+def bfs(graph, v):
+    visited = {}
+    queue = deque([v])
+
+    while queue:
+        n = queue.popleft()
+        if n not in visited:
+            visited.setdefault(n)
+            queue += graph[n]    
     return visited
 
 n, m, v = map(int, input().split())
@@ -32,6 +43,6 @@ for key in graph:
     graph[key].sort()
 
 print(' '.join(list(map(str, dfs(graph, v)))))
-
+print(' '.join(list(map(str, bfs(graph, v)))))
 
 
