@@ -4,3 +4,5 @@ Y = li[1] + li[3]*max(0, li[4]-li[2])
 print(min(X, Y))
 
    
+
+   
